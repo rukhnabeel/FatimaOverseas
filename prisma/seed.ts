@@ -89,9 +89,9 @@ async function main() {
       itinerary: "A comfortable family-friendly 21-day Hajj package designed for families travelling together with premium 4-star hotels, family rooms, and dedicated family support.",
     },
     {
-      title: "Ramadan Special Umrah — 15 Days",
-      slug: "ramadan-special",
-      type: "Ramadan",
+      title: "Holiday Package — 15 Days",
+      slug: "holiday-special",
+      type: "Holiday Packages",
       durationDays: 15,
       price: 9000000,
       priceLabel: "₹90,000",
@@ -100,7 +100,7 @@ async function main() {
       departureCity: "Delhi / Mumbai / Hyderabad / Bangalore",
       tag: "Seasonal",
       inclusions: "Visa Processing\nReturn Flights\nSuhoor & Iftar Buffet\nTarawih Arrangements\nZiyarat Tours\nLocal Transport\nZamzam Water\nScholar Guide",
-      itinerary: "Experience the unparalleled blessings of Ramadan in Makkah and Madinah. Timed to include the last 10 nights of Ramadan for those seeking Laylatul Qadr.",
+      itinerary: "Experience the unparalleled beauty of this holiday destination. Timed perfectly for your family vacation.",
     },
   ];
 

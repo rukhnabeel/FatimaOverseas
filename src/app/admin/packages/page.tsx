@@ -19,7 +19,9 @@ interface Package {
 const typeColors: Record<string, string> = {
   Umrah: "bg-brand-light text-brand-secondary",
   Hajj: "bg-amber-100 text-amber-700",
-  Ramadan: "bg-purple-100 text-purple-700",
+  "Holiday Packages": "bg-purple-100 text-purple-700",
+  "Hindu Religious Yatra": "bg-orange-100 text-orange-700",
+  Group: "bg-sky-100 text-sky-700",
 };
 
 export default function AdminPackagesPage() {

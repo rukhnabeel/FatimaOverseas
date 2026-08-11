@@ -84,7 +84,7 @@ export default function EditPackagePage({ params }: { params: Promise<{ slug: st
               <label className="block text-sm font-semibold text-brand-dark mb-1.5">Type</label>
               <select name="type" value={form.type} onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl border border-sky-200 text-brand-dark text-sm focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 bg-white">
-                <option>Umrah</option><option>Hajj</option><option>Ramadan</option><option>Group</option><option>Family</option>
+                <option>Umrah</option><option>Hajj</option><option>Holiday Packages</option><option>Hindu Religious Yatra</option><option>Group</option><option>Family</option>
               </select>
             </div>
             <div>

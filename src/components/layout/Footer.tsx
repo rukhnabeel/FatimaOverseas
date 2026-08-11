@@ -62,7 +62,7 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-bold text-brand-muted uppercase tracking-widest mb-5">Packages</h3>
             <ul className="space-y-3">
-              {['Economy Umrah', 'Premium Hajj', 'Ramadan Special', 'Family Packages', 'Group Tours'].map((item) => (
+              {['Economy Umrah', 'Premium Hajj', 'Holiday Packages', 'Hindu Religious Yatra', 'Family Packages', 'Group Tours'].map((item) => (
                 <li key={item}>
                   <Link href="/packages" className="text-sky-200 hover:text-white transition-colors text-sm">{item}</Link>
                 </li>

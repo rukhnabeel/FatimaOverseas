@@ -202,9 +202,10 @@ export default function ContactPage() {
                           <option>Standard Umrah</option>
                           <option>Premium Umrah</option>
                           <option>Economy Hajj</option>
-                          <option>Family Hajj</option>
-                          <option>Ramadan Special</option>
-                          <option>Group Tour</option>
+                          <option>Premium Hajj</option>
+                          <option>Holiday Packages</option>
+                          <option>Hindu Religious Yatra</option>
+                          <option>Other Services</option>
                           <option>Custom Package</option>
                         </select>
                       </div>

@@ -19,9 +19,9 @@ const slides = [
   },
   {
     id: 3,
-    title: "Ramadan Specials",
-    subtitle: "Spend the holy month in the blessed cities of Makkah and Madinah.",
-    image: "https://images.unsplash.com/photo-1584988636166-512c9c546db2?q=80&w=2070&auto=format&fit=crop",
+    title: "Holiday Packages",
+    subtitle: "Explore beautiful destinations worldwide",
+    image: "https://images.unsplash.com/photo-1590077428593-a55bbc4dd74f?q=80&w=2000&auto=format&fit=crop",
   }
 ];
 

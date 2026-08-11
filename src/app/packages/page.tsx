@@ -5,7 +5,7 @@ import { ArrowRight, SlidersHorizontal } from "lucide-react";
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-const filters = ["All", "Umrah", "Hajj", "Ramadan", "Group", "Family"];
+const filters = ["All", "Umrah", "Hajj", "Holiday Packages", "Hindu Religious Yatra", "Group", "Family"];
 
 interface Package {
   id: string;

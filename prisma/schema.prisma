@@ -2,7 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client-js"
+  engineType = "library"
 }
 
 datasource db {
@@ -13,7 +14,7 @@ model Package {
   id            String   @id @default(cuid())
   title         String
   slug          String   @unique
-  type          String   // Umrah | Hajj | Ramadan | Group | Family
+  type          String   // Umrah | Hajj | Holiday Packages | Hindu Religious Yatra | Group | Family
   durationDays  Int
   price         Int      // stored in paise (e.g. 6500000 = ₹65,000)
   priceLabel    String   // display string e.g. "₹65,000"

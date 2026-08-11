@@ -7,7 +7,8 @@ import { useState, useEffect } from 'react';
 const packageCategories = [
   { name: "Umrah", image: "/menu/umrah.png", desc: "Experience spiritual tranquility" },
   { name: "Hajj", image: "/menu/hajj.png", desc: "Complete your sacred journey" },
-  { name: "Ramadan", image: "/menu/ramadan.png", desc: "Spend the holy month in Makkah" },
+  { name: "Holiday Packages", image: "/menu/ramadan.png", desc: "Explore beautiful destinations worldwide" },
+  { name: "Hindu Religious Yatra", image: "/menu/ramadan.png", desc: "Spiritual journeys to sacred places" },
   { name: "Group", image: "/menu/group.png", desc: "Travel together with loved ones" },
   { name: "Family", image: "/menu/family.png", desc: "Special packages for families" }
 ];
@@ -139,7 +140,7 @@ export default function Navbar() {
                       {l.label}
                     </Link>
                     <div className="pl-6 flex flex-col gap-1 border-l-2 border-sky-100 ml-4 mb-2">
-                      {["Umrah", "Hajj", "Ramadan", "Group", "Family"].map((cat) => (
+                      {["Umrah", "Hajj", "Holiday Packages", "Hindu Religious Yatra", "Group", "Family"].map((cat) => (
                         <Link
                           key={cat}
                           href={`/packages?type=${cat}`}
