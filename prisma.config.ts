@@ -1,5 +1,6 @@
 import { defineConfig } from "prisma/config";
 import path from "node:path";
+import "dotenv/config";
 
 // SQLite adapter for local development
 export default defineConfig({

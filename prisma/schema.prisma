@@ -6,9 +6,7 @@ generator client {
 }
 
 datasource db {
-  // Connection URL is defined in prisma.config.ts (Prisma 7 requirement)
-  // Local dev: SQLite via libSQL. Switch to postgresql for Supabase production.
-  provider = "sqlite"
+  provider = "postgresql"
 }
 
 model Package {
