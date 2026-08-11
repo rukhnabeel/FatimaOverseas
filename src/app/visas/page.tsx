@@ -56,7 +56,7 @@ export default async function VisasPage() {
                 <p className="text-sky-600 max-w-2xl mx-auto">Select the visa that suits your needs and contact us directly to start the application process.</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {visas.map((visa) => {
+                {visas.map((visa: any) => {
                   const whatsappMessage = `Assalamualaikum, I want to inquire about the ${visa.title} (${visa.country}).`;
                   const whatsappUrl = `https://wa.me/918853130084?text=${encodeURIComponent(whatsappMessage)}`;
                   
@@ -103,7 +103,7 @@ export default async function VisasPage() {
                         <div className="mb-6 flex-1">
                           <h4 className="text-sm font-bold text-brand-dark mb-2">Documents Required:</h4>
                           <ul className="space-y-1">
-                            {visa.documentsRequired.split('\n').filter(Boolean).map((doc, i) => (
+                            {visa.documentsRequired.split('\n').filter(Boolean).map((doc: string, i: number) => (
                               <li key={i} className="flex items-start gap-2 text-sm text-sky-600">
                                 <CheckCircle2 size={16} className="text-brand-primary mt-0.5 shrink-0" />
                                 <span>{doc}</span>
