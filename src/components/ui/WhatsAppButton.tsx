@@ -6,8 +6,18 @@ import { useEffect, useState } from "react";
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [waNumber, setWaNumber] = useState("918853130084");
 
   useEffect(() => {
+    fetch("/api/settings")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.settings?.whatsappNumber && data.settings.whatsappNumber !== "910000000000") {
+          setWaNumber(data.settings.whatsappNumber);
+        }
+      })
+      .catch(() => {});
+
     const timer = setTimeout(() => {
       setIsVisible(true);
       // Show tooltip briefly after appearing
@@ -36,7 +46,7 @@ export default function WhatsAppButton() {
 
       {/* Button */}
       <a
-        href="https://wa.me/910000000000?text=Assalamualaikum, I want to know more about your Hajj and Umrah services."
+        href={`https://wa.me/${waNumber}?text=Assalamualaikum, I want to know more about your Hajj and Umrah services.`}
         target="_blank"
         rel="noopener noreferrer"
         className="relative bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-green-300/50 hover:shadow-xl hover:shadow-green-300/60 hover:-translate-y-1 hover:scale-110 transition-all duration-300 flex items-center justify-center"
