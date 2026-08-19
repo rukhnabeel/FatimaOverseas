@@ -26,8 +26,8 @@ export default async function VisasPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary text-white py-24 relative overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1581452934898-15ebbf262524?q=80&w=2000&auto=format&fit=crop" 
-          alt="Visa Services" 
+          src="/menu/visa.png" 
+          alt="Visa Services Background" 
           className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" 
         />
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl z-0" />

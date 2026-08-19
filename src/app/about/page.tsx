@@ -31,23 +31,23 @@ const values = [
 ];
 
 const team = [
-  { 
-    name: "Shakib Hasan Khan", 
-    role: "Founder", 
+  {
+    name: "Shakib Hasan Khan",
+    role: "Founder",
     phone: "+91 8853130084, +91 7084210406",
-    image: "/team/founder.jpg" 
+    image: "/team/founder.jpg"
   },
-  { 
-    name: "Nazrul Hasan Khan", 
-    role: "Marketing & Sales Head", 
+  {
+    name: "Nazrul Hasan Khan\n(EX Inspector)",
+    role: "Sales & Marketing Head",
     phone: "+91 9919997570, +91 9936002930",
-    image: "/team/marketing.jpg" 
+    image: "/team/marketing.jpg"
   },
-  { 
-    name: "Aarish Siddiqui", 
-    role: "Sales Executive", 
+  {
+    name: "Aarish Siddiqui",
+    role: "Sales Executive",
     phone: "+91 6393746314",
-    image: "/team/sales.png" 
+    image: "/team/sales.png"
   }
 ];
 
@@ -64,7 +64,7 @@ export default function AboutPage() {
     <div className="flex flex-col w-full">
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary text-white py-28 relative overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1533939501584-633000b21a81?q=80&w=2000&auto=format&fit=crop" alt="About Us Background" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" />
+        <img src="/menu/hajj.png" alt="About Us Background" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl z-0" />
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-muted/10 rounded-full blur-3xl" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -117,9 +117,6 @@ export default function AboutPage() {
               <div className="space-y-4 text-sky-600 leading-relaxed">
                 <p>
                   Fatima Overseas was founded in 2017 with a single mission: to make the sacred journey of Hajj and Umrah accessible, affordable, and spiritually fulfilling for every Muslim family in India.
-                </p>
-                <p>
-                  Our founder, Haji Mohammed Shakib, having performed Hajj himself, understood the profound challenges pilgrims face — from navigating visa processes to finding comfortable accommodation near the Haram. Fatima Overseas was born to solve every one of those challenges.
                 </p>
                 <p>
                   Today, we proudly serve pilgrims from across India with a full suite of government-approved packages, expert guidance from experienced scholars, and hotel partnerships with top establishments in Makkah and Madinah.
@@ -203,7 +200,7 @@ export default function AboutPage() {
                 <div className="w-48 h-48 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary mx-auto mb-6 flex items-center justify-center overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-xl font-bold text-brand-dark">{member.name}</h3>
+                <h3 className="text-xl font-bold text-brand-dark whitespace-pre-line">{member.name}</h3>
                 <p className="text-brand-primary text-sm font-bold uppercase tracking-wider mt-1.5">{member.role}</p>
                 <div className="mt-4 pt-4 border-t border-sky-100 space-y-1 text-sky-600 font-medium text-sm">
                   {member.phone.split(',').map(p => <p key={p}>{p.trim()}</p>)}

@@ -49,6 +49,7 @@ export default function Footer() {
                 { label: 'Visa Services', href: '/visas' },
                 { label: 'Group Fares', href: '/group-fares' },
                 { label: 'Taxi Booking', href: '/taxi-booking' },
+                { label: 'Gallery', href: '/gallery' },
                 { label: 'Contact Us', href: '/contact' },
               ].map((item) => (
                 <li key={item.label}>

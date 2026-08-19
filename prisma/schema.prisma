@@ -78,3 +78,44 @@ model Visa {
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 }
+
+model GroupFare {
+  id                String   @id @default(cuid())
+  title             String
+  slug              String   @unique
+  airline           String   @default("")
+  sector            String   @default("") // e.g., DEL-JED-DEL
+  departureDate     DateTime?
+  returnDate        DateTime?
+  price             Int      // stored in paise
+  priceLabel        String
+  seatsAvailable    Int      @default(0)
+  baggageAllowance  String   @default("")
+  imageUrl          String?
+  isPublished       Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model TaxiBooking {
+  id                String   @id @default(cuid())
+  title             String
+  slug              String   @unique
+  vehicleType       String   @default("Sedan") // e.g., Sedan, SUV, Bus
+  route             String   @default("")      // e.g., Makkah to Madinah
+  price             Int      // stored in paise
+  priceLabel        String
+  capacity          Int      @default(4)
+  imageUrl          String?
+  isPublished       Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model GalleryImage {
+  id          String   @id @default(cuid())
+  title       String   @db.VarChar(100) // Title up to 100 characters
+  imageUrl    String
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}

@@ -50,8 +50,8 @@ export default function ContactPage() {
     <div className="flex flex-col w-full">
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary text-white py-24 relative overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1542044801-44bf83311ec6?q=80&w=2000&auto=format&fit=crop" alt="Contact Us Background" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl z-0" />
+        <img src="/menu/umrah.png" alt="Contact Us Background" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl z-0" />
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
           <span className="inline-block px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-brand-muted text-sm font-semibold mb-6 uppercase tracking-widest">
             Get in Touch

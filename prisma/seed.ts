@@ -1,5 +1,16 @@
-import { prisma } from "../src/lib/prisma";
+import * as dotenv from "dotenv";
+dotenv.config();
+dotenv.config({ path: ".env" });
+
+import { PrismaClient } from "@prisma/client";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
+
+const connectionString = "postgresql://neondb_owner:npg_1guNYthUSX7B@ep-hidden-pond-azkyiswo.c-3.ap-southeast-1.aws.neon.tech/neondb?sslmode=require";
+const pool = new Pool({ connectionString });
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   console.log("🌱 Seeding database...");
@@ -176,6 +187,52 @@ async function main() {
   } else {
     console.log("✓ Settings already exist, skipping");
   }
+
+  // ── Visas ───────────────────────────────────────────────────────────────
+  const visas = [
+    {
+      title: "Saudi Arabia Tourist e-Visa",
+      slug: "saudi-tourist-evisa",
+      country: "Saudi Arabia",
+      price: 1050000,
+      priceLabel: "₹10,500",
+      processingTime: "24 - 48 Hours",
+      validity: "1 Year (Multiple Entry)",
+      documentsRequired: "Passport Copy (Front & Back)\nPassport Size Photo (White Background)\nPAN Card\nEmail ID",
+      imageUrl: "/menu/visa.png"
+    },
+    {
+      title: "Saudi Arabia Umrah Visa",
+      slug: "saudi-umrah-visa",
+      country: "Saudi Arabia",
+      price: 1550000,
+      priceLabel: "₹15,500",
+      processingTime: "2 - 4 Working Days",
+      validity: "90 Days (Single Entry)",
+      documentsRequired: "Original Passport (6 months validity)\n2 Passport Size Photos (White Background)\nBiometrics (if applicable)\nVaccination Certificate",
+      imageUrl: "/menu/visa.png"
+    },
+    {
+      title: "UAE Tourist Visa (Dubai)",
+      slug: "uae-tourist-visa",
+      country: "United Arab Emirates",
+      price: 650000,
+      priceLabel: "₹6,500",
+      processingTime: "3 - 5 Working Days",
+      validity: "30 Days (Single Entry)",
+      documentsRequired: "Passport Copy (Front & Back)\nPassport Size Photo (White Background)\nFlight Tickets\nHotel Booking",
+      imageUrl: "/menu/visa.png"
+    }
+  ];
+
+  for (const visa of visas) {
+    await prisma.visa.upsert({
+      where: { slug: visa.slug },
+      update: visa,
+      create: visa,
+    });
+  }
+  console.log(`✓ Seeded ${visas.length} visas`);
 
   console.log("\n✅ Seeding complete!");
 }

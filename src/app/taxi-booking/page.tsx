@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Car, Clock, ShieldCheck, MapPin } from "lucide-react";
+import { Car, Clock, ShieldCheck, MapPin, Users, ChevronRight } from "lucide-react";
+import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
   title: "Taxi Booking | Fatima Overseas",
@@ -13,17 +14,25 @@ const features = [
   { icon: MapPin, title: "City-to-City", desc: "Transfers between Jeddah, Makkah, and Madinah." },
 ];
 
-export default function TaxiBookingPage() {
+export const revalidate = 60; // Revalidate cache every 60 seconds
+
+export default async function TaxiBookingPage() {
   const whatsappMessage = "Assalamualaikum, I want to inquire about Taxi Booking.";
   const whatsappUrl = `https://wa.me/918853130084?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Fetch active taxi bookings
+  const taxiBookings = await prisma.taxiBooking.findMany({
+    where: { isPublished: true },
+    orderBy: { createdAt: "desc" }
+  });
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#f0f9ff]">
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary text-white py-24 relative overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop" 
-          alt="Taxi Services" 
+          src="/menu/taxi.png" 
+          alt="Taxi Booking Background" 
           className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" 
         />
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl z-0" />
@@ -39,6 +48,62 @@ export default function TaxiBookingPage() {
           </p>
         </div>
       </section>
+
+      {/* Available Taxis */}
+      {taxiBookings.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-brand-dark mb-12 text-center">Popular Taxi Routes</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {taxiBookings.map((taxi) => {
+                const bookMessage = `Assalamualaikum, I want to book a taxi: ${taxi.title} (${taxi.route}) for ${taxi.priceLabel}.`;
+                const bookUrl = `https://wa.me/918853130084?text=${encodeURIComponent(bookMessage)}`;
+
+                return (
+                  <div key={taxi.id} className="bg-white border border-sky-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col">
+                    <div className="h-48 relative overflow-hidden bg-sky-50">
+                      {taxi.imageUrl ? (
+                        <img src={taxi.imageUrl} alt={taxi.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-sky-200">
+                          <Car size={64} />
+                        </div>
+                      )}
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-primary font-bold text-sm shadow-sm flex items-center gap-1.5">
+                        <Users size={14} /> Up to {taxi.capacity} Pax
+                      </div>
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <div className="mb-4 flex-1">
+                        <div className="text-xs font-bold tracking-wider text-sky-500 uppercase mb-1">{taxi.vehicleType}</div>
+                        <h3 className="text-xl font-bold text-brand-dark leading-tight mb-3">{taxi.title}</h3>
+                        <div className="flex items-center gap-2 text-sm text-brand-dark">
+                          <MapPin className="w-4 h-4 text-sky-400 shrink-0" />
+                          <span className="font-medium">{taxi.route}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="pt-4 border-t border-sky-50 flex items-center justify-between gap-4 mb-6">
+                        <div className="text-sky-500 text-sm font-medium">Starting at</div>
+                        <div className="text-2xl font-black text-brand-primary">{taxi.priceLabel}</div>
+                      </div>
+
+                      <a 
+                        href={bookUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full py-3 bg-[#f0f9ff] text-brand-primary font-bold rounded-xl group-hover:bg-brand-primary group-hover:text-white transition-colors"
+                      >
+                        Book Ride <ChevronRight size={18} />
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Content */}
       <section className="py-20">

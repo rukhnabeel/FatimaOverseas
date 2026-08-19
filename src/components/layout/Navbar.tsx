@@ -19,6 +19,7 @@ const navLinks = [
   { href: '/visas', label: 'Visa Services' },
   { href: '/group-fares', label: 'Group Fares' },
   { href: '/taxi-booking', label: 'Taxi Booking' },
+  { href: '/gallery', label: 'Gallery' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];

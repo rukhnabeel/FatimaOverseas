@@ -2,13 +2,16 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, Package, FileText, Settings, LogOut, Menu, X, Globe, Stamp } from "lucide-react";
+import { LayoutDashboard, Package, FileText, Settings, LogOut, Menu, X, Globe, Stamp, Users, Car, Image as ImageIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const navItems = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/packages", label: "Packages", icon: Package },
   { href: "/admin/visas", label: "Visas", icon: Stamp },
+  { href: "/admin/group-fares", label: "Group Fares", icon: Users },
+  { href: "/admin/taxi-bookings", label: "Taxi Bookings", icon: Car },
+  { href: "/admin/gallery", label: "Gallery", icon: ImageIcon },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
 

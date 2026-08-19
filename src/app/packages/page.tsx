@@ -52,9 +52,9 @@ function PackagesContent() {
   return (
     <div className="w-full min-h-screen bg-[#f0f9ff]">
       {/* Header */}
-      <div className="bg-gradient-to-br from-brand-dark to-brand-secondary text-white py-20 relative overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1579899388319-7e3e9d40134b?q=80&w=2000&auto=format&fit=crop" alt="Our Packages Background" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-primary/20 rounded-full blur-3xl z-0" />
+      <section className="bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary text-white py-24 relative overflow-hidden">
+        <img src="/menu/group.png" alt="Our Packages Background" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 z-0" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl z-0" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="text-brand-muted font-semibold text-sm uppercase tracking-widest">Explore</span>
           <h1 className="text-4xl md:text-6xl font-black mt-2 mb-4">Our Packages</h1>
@@ -67,7 +67,7 @@ function PackagesContent() {
             <path d="M0,25 C360,50 1080,0 1440,25 L1440,50 L0,50 Z" />
           </svg>
         </div>
-      </div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Filters */}
@@ -136,14 +136,13 @@ function PackagesContent() {
                 key={pkg.slug}
                 className="group rounded-3xl overflow-hidden border border-sky-100 bg-white hover:shadow-2xl hover:shadow-sky-100 hover:-translate-y-2 transition-all duration-300 flex flex-col"
               >
-                <div className="relative h-52 bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary overflow-hidden">
-                  {pkg.imageUrl ? (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={pkg.imageUrl} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                  ) : (
-                    <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop" alt={pkg.title} className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay hover:scale-105 transition-transform duration-500" />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent" />
+                <div className="relative h-64 overflow-hidden bg-brand-primary">
+                    {pkg.imageUrl ? (
+                      <img src={pkg.imageUrl} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    ) : (
+                      <img src="/menu/hajj.png" alt={pkg.title} className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay hover:scale-105 transition-transform duration-500" />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-brand-accent text-white text-xs font-bold rounded-full shadow">{pkg.tag}</span>
                   </div>

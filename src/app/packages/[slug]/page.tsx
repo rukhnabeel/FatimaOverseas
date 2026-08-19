@@ -59,10 +59,9 @@ export default async function PackageDetailPage({ params }: { params: Promise<Pa
       {/* Hero */}
       <div className="relative h-[420px] bg-gradient-to-br from-brand-dark via-brand-secondary to-brand-primary overflow-hidden">
         {packageData.imageUrl ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
           <img src={packageData.imageUrl} alt={packageData.title} className="absolute inset-0 w-full h-full object-cover" />
         ) : (
-          <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2000&auto=format&fit=crop" alt={packageData.title} className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" />
+          <img src="/menu/hajj.png" alt={packageData.title} className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-secondary/40 to-transparent" />
 

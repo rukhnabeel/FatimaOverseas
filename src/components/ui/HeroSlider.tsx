@@ -9,19 +9,19 @@ const slides = [
     id: 1,
     title: "Premium Umrah Packages",
     subtitle: "Experience spiritual tranquility with our luxury Umrah services.",
-    image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2070&auto=format&fit=crop",
+    image: "/menu/umrah.png",
   },
   {
     id: 2,
     title: "Hajj with Comfort",
     subtitle: "Complete your sacred journey with expert guidance and premium care.",
-    image: "https://images.unsplash.com/photo-1565552643982-2d8ba436eb4b?q=80&w=2070&auto=format&fit=crop",
+    image: "/menu/hajj.png",
   },
   {
     id: 3,
     title: "Holiday Packages",
     subtitle: "Explore beautiful destinations worldwide",
-    image: "https://images.unsplash.com/photo-1590077428593-a55bbc4dd74f?q=80&w=2000&auto=format&fit=crop",
+    image: "/menu/ramadan.png",
   }
 ];
 
